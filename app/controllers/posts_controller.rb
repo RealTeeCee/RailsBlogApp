@@ -13,11 +13,22 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @post = Post.find(params[:id])
+   
+    respond_to do |format|
+      format.html  # show.html.erb
+      format.json  { render :json => @post }
+    end
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+   
+    respond_to do |format|
+      format.html  # new.html.erb
+      format.json  { render :json => @post }
+    end
   end
 
   # GET /posts/1/edit
@@ -70,6 +81,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:name, :title, :content)
+      params.require(:post).permit(:name, :title, :content, :comments)
     end
 end
