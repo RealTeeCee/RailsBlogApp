@@ -6,4 +6,5 @@ class Post < ActiveRecord::Base
                     :length => { :minimum => 5 }
  
   has_many :comments
+  has_many :likes, as: :likeable
 end
