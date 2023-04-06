@@ -1,30 +1,31 @@
-<div class="container">
+
 <h1 class="text-center">Listing posts</h1>
+<%= link_to 'New post', new_post_path , class:"btn btn-success"%>
+
+<br/>
+<br/>
  
-<table class="table" border="1">
-  <tr>
+<table class="table table-dark table-striped  text-center" border="1">
+  <thead class="table-dark">
     <th>Name</th>
     <th>Title</th>
     <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <th colspan="3">Action</th>
+  </thead>
  
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.name %></td>
     <td><%= post.title %></td>
     <td><%= post.content %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Show', post , class:"btn btn-primary"%></td>
+    <td><%= link_to 'Edit', edit_post_path(post) , class:"btn btn-warning"%></td>
     <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?',
-                                     :method => :delete %></td>
+                                     :method => :delete , class:"btn btn-danger"%></td>
   </tr>
 <% end %>
 </table>
  
 <br />
  
-<%= link_to 'New post', new_post_path %>
-</div>
+
