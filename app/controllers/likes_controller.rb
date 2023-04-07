@@ -5,4 +5,12 @@ class LikesController < ApplicationController
         Like.create(likeable_id: params["likeable_id"], likeable_type: 'Post')
         redirect_to post_url(params["likeable_id"])
     end
+
+    def remove
+        like = Like.where(likeable_id: params["likeable_id"], likeable_type: 'Post').first
+        if like
+            like.destroy 
+        end
+        redirect_to post_url(params["likeable_id"])
+    end
 end
