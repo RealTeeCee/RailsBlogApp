@@ -20,6 +20,8 @@
   </p>
 
   <div class="container" style="display: inherit;">
+
+ 
   <form action="/likes/action" method="post" > 
     <input type="hidden" name="likeable_id" value="<%= @post.id %>"/>
     <button class="btn btn-success">
@@ -31,6 +33,8 @@
     </button>
   
   </form>
+
+  <% if @post.likes.length() > 0 %>
 
   <form action="/likes/dislike" method="post" style="padding-left: 10px;"> 
   <input type="hidden" name="likeable_id" value="<%= @post.id %>"/>
@@ -60,8 +64,9 @@
   </span>
   </button>
 
-  
 </form>
+
+<% end %>
 <div class="container">
 <h4>
 <%= @post.likes.length() %> 
