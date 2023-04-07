@@ -8,7 +8,8 @@
 
 
 * Show Page
-![3](https://user-images.githubusercontent.com/105790734/230342709-9ccb006b-f208-41fb-a740-cab58240450f.png)
+![3](https://user-images.githubusercontent.com/105790734/230534031-00f0c2f7-1824-4fd5-a3a8-55214b433da7.png)
+
 
 
 * Edit Page
